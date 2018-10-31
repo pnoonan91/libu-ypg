@@ -44,7 +44,7 @@ const StyledLandingAboutHeader = styled.h1`
 // -- Landing About Component ---
 const LandingAbout = props => {
   const howWeHelp = "How We Help";
-  const getInvolved = "Get Involved";
+  const getInvolved = "Get Involved!";
   const aboutSections = [
     {
       title: "Fundraisers",

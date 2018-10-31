@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@rebass/grid": "^6.0.0-4",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
     "polished": "^2.3.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
