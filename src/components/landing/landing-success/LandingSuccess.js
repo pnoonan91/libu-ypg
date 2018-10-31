@@ -1,10 +1,10 @@
 import * as React from "react";
 import styled from "styled-components";
-import { Flex, Box } from "@rebass/grid";
+import { Flex } from "@rebass/grid";
 
 import { breakpointMappings } from "../../../styles/sizes";
 
-const successImageSource = "/images/team-noonan.jpg";
+const successImageSource = "/images/family.jpeg";
 const successImageTagline = "Success Stories";
 const successImageCaption =
   "There's nothing more genuine than giving a child a sense of safety and belonging.";
@@ -13,13 +13,24 @@ const successImageCaption =
 // --- Styled Components ---
 const StyledLandingImageContainer = styled(Flex)`
   background-image: url(${successImageSource});
-  background-size: 150%;
-  background-position: center;
-  height: 275px;
+  background-size: 200%;
+  background-position: bottom;
+  height: 300px;
 
   ${breakpointMappings.lg} {
     background-size: 100%;
-    height: 300px;
+    background-position: bottom;
+    height: 500px;
+  }
+`;
+
+const StyledLandingSuccessTextContainer = styled(Flex)`
+  margin-top: auto;
+  margin-bottom: 1rem;
+
+  ${breakpointMappings.lg} {
+    align-items: flex-end;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -32,8 +43,7 @@ const StyledSuccessImageTagline = styled.h1`
   text-shadow: rgba(0, 0, 0, 0.25) 1px 1px 1px;
 
   ${breakpointMappings.md_down} {
-    padding: 2rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -49,6 +59,10 @@ const StyledSuccessImageCaption = styled.p`
 const StyledSuccessButton = styled.a`
   margin: auto;
   text-align: center;
+
+  ${breakpointMappings.md_down} {
+    font-size: 1rem;
+  }
 `;
 
 //
@@ -56,7 +70,7 @@ const StyledSuccessButton = styled.a`
 const LandingImage = props => {
   return (
     <StyledLandingImageContainer flexDirection="column">
-      <Box style={{ textAlign: "center", marginTop: "9rem" }}>
+      <StyledLandingSuccessTextContainer flexDirection="column">
         <StyledSuccessImageTagline>
           {successImageTagline}
         </StyledSuccessImageTagline>
@@ -66,7 +80,7 @@ const LandingImage = props => {
         <StyledSuccessButton className="primary">
           See Our Work In Action
         </StyledSuccessButton>
-      </Box>
+      </StyledLandingSuccessTextContainer>
     </StyledLandingImageContainer>
   );
 };

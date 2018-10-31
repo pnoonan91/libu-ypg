@@ -54,6 +54,14 @@ export const GlobalStyle = createGlobalStyle`
     h6.small-margin {
         margin: 0.5rem 0;
     }
+    h1.no-margin,
+    h2.no-margin,
+    h3.no-margin,
+    h4.no-margin,
+    h5.no-margin,
+    h6.no-margin {
+        margin: 0;
+    }
     p.no-margin {
         margin: 0;
     }
@@ -96,6 +104,7 @@ export const GlobalStyle = createGlobalStyle`
         
         :hover {
             background-color: ${theme.colors.darkPink};
+            border-color: ${theme.colors.darkPink};
             cursor: pointer;
         }
     }

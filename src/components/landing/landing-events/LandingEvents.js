@@ -2,26 +2,40 @@ import * as React from "react";
 import * as moment from "moment";
 import * as _ from "lodash";
 import styled from "styled-components";
-import { Flex } from "@rebass/grid";
+import { Flex, Box } from "@rebass/grid";
 
 import { events } from "../../../data/events";
+import { breakpointMappings } from "../../../styles";
 
 //
 // --- Styled Components ---
 const StyledLandingEventsContainer = styled(Flex)`
   margin: auto;
   max-width: ${props => props.theme.elementSizes.siteWrap};
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  ${breakpointMappings.lg} {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 `;
 
 const StyledEventsList = styled(Flex)`
-  width: 80%;
-  margin: auto;
+  ${breakpointMappings.lg} {
+    width: 90%;
+    margin: auto;
+  }
 `;
 
 const StyledEvent = styled(Flex)`
   margin-top: 1rem;
+  flex-direction: column;
+  box-shadow: ${props => props.theme.shadows.elevationShadow};
+
+  ${breakpointMappings.lg} {
+    flex-direction: row;
+  }
 `;
 
 const StyledEventImage = styled.div`
@@ -50,16 +64,27 @@ const LandingEvents = props => {
     events.map(event => (
       <StyledEvent>
         <StyledEventImage src={event.image} />
-        <Flex flexDirection="column" pl={"0.5rem"} style={{ flexGrow: 1 }}>
-          <h3 className="small-margin">{event.title}</h3>
-          <p className="no-margin small bold">
-            {moment(event.date).format("dddd, MMMM Do YYYY")} | {event.time}
-          </p>
-          <p className="no-margin small">{event.location}</p>
-          <p className="no-margin small">{event.address}</p>
-          <p className="medium">{event.details}</p>
+        <Flex
+          flexDirection="column"
+          justifyContent="space-between"
+          p="1rem"
+          style={{ flexGrow: 1 }}
+        >
+          <Box>
+            <h2 className="no-margin">{event.title}</h2>
+            <p className="no-margin small bold">
+              {moment(event.date).format("dddd, MMMM Do YYYY")} | {event.time}
+            </p>
+            <p className="no-margin small">{event.location}</p>
+            <p className="no-margin small">{event.address}</p>
+            <p className="medium">{event.details}</p>
+          </Box>
           <Flex alignItems="center">
-            {event.cost ? <h3>{event.cost}</h3> : <h3>Free!</h3>}
+            {event.cost ? (
+              <h2 className="no-margin">{event.cost}</h2>
+            ) : (
+              <h2 className="no-margin">Free!</h2>
+            )}
             {event.ticketLink ? (
               <StyledEventLink className="primary" href={event.ticketLink}>
                 Tickets
