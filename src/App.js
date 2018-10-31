@@ -1,25 +1,22 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+
+import { GlobalStyle } from "./styles";
+import Header from "./components/layout/header/Header";
+import Messages from "./components/messages/Messages";
+import LandingImage from "./components/landing/landing-image/LandingImage";
+import LandingAbout from "./components/landing/landing-about/LandingAbout";
+import LandingMission from "./components/landing/landing-mission/LandingMission";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <GlobalStyle />
+        <Header />
+        <Messages />
+        <LandingImage />
+        <LandingAbout />
+        <LandingMission />
       </div>
     );
   }
