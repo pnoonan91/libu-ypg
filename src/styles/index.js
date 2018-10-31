@@ -57,6 +57,18 @@ export const GlobalStyle = createGlobalStyle`
     p.no-margin {
         margin: 0;
     }
+    p.small {
+        font-size: 12px;
+    }
+    p.medium {
+        font-size: 14px;
+    }
+    p.bold {
+        font-weight: bold;
+    }
+    a {
+        text-decoration: none;
+    }
     a.outline {
         border: 1px solid ${theme.colors.primaryPink};
         padding: .5rem 1rem;
