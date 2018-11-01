@@ -75,7 +75,7 @@ const LandingAbout = props => {
   const mappedAboutIcons = (
     <Flex justifyContent="space-around">
       {aboutSections.map(about => (
-        <StyledLandingAboutSection>
+        <StyledLandingAboutSection key={`${about.imagePath}-icons`}>
           <StyledLandingIcon src={about.imagePath} />
         </StyledLandingAboutSection>
       ))}
@@ -85,7 +85,7 @@ const LandingAbout = props => {
   const mappedAboutTitles = (
     <Flex justifyContent="space-around">
       {aboutSections.map(about => (
-        <StyledLandingAboutSection>
+        <StyledLandingAboutSection key={`${about.title}-titles`}>
           <h2 className="small-margin">{about.title}</h2>
         </StyledLandingAboutSection>
       ))}
@@ -95,7 +95,7 @@ const LandingAbout = props => {
   const mappedAboutDescriptions = (
     <Flex justifyContent="space-around">
       {aboutSections.map(about => (
-        <StyledLandingAboutSection>
+        <StyledLandingAboutSection key={`${about.title}-description`}>
           <p className="no-margin">{about.description}</p>
         </StyledLandingAboutSection>
       ))}
@@ -103,7 +103,7 @@ const LandingAbout = props => {
   );
 
   const mobileMappedAboutSections = aboutSections.map(about => (
-    <StyledLandingAboutSection>
+    <StyledLandingAboutSection key={`${about.title}-mobile-sections`}>
       <StyledLandingIcon src={about.imagePath} />
       <h2 className="small-margin">{about.title}</h2>
       <p className="no-margin">{about.description}</p>

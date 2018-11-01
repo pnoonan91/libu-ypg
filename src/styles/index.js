@@ -37,6 +37,7 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 500;
         color: ${theme.colors.primaryPink};
         letter-spacing: 0.2px;
+        margin: 0.5rem 0;
     }
     h1.white,
     h2.white,
@@ -61,6 +62,9 @@ export const GlobalStyle = createGlobalStyle`
     h5.no-margin,
     h6.no-margin {
         margin: 0;
+    }
+    p.small-margin{
+        margin: 0.3rem 0;
     }
     p.no-margin {
         margin: 0;
@@ -111,23 +115,25 @@ export const GlobalStyle = createGlobalStyle`
     a.secondary {
         font-weight: bold;
         padding: .5rem 1rem;
-        color: ${theme.colors.primaryGray};
+        color: ${theme.colors.primaryPink};
         transition: color .4s;
         letter-spacing: 0.3px;
         text-transform: uppercase;
 
         :hover {
             cursor: pointer;
-            color: ${theme.colors.primaryPink};
+            color: ${theme.colors.darkPink};
         }
     }
     a.white {
         color: white;
         padding: .5rem;
+        transition: all .4s;
 
         :hover {
             cursor: pointer;
-            color: ${theme.colors.primaryGray};
+            color: white;
+            text-decoration: underline;
         }
     }
 `;

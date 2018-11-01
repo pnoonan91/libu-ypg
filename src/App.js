@@ -8,6 +8,7 @@ import LandingAbout from "./components/landing/landing-about/LandingAbout";
 import LandingMission from "./components/landing/landing-mission/LandingMission";
 import LandingEvents from "./components/landing/landing-events/LandingEvents";
 import LandingSuccess from "./components/landing/landing-success/LandingSuccess";
+import LandingVolunteer from "./components/landing/landing-volunteer/LandingVolunteer";
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
         <LandingMission />
         <LandingEvents />
         <LandingSuccess />
+        <LandingVolunteer />
       </div>
     );
   }

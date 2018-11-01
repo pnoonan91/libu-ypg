@@ -22,7 +22,11 @@ const StyledLandingEventsContainer = styled(Flex)`
 `;
 
 const StyledEventsList = styled(Flex)`
+  flex-direction: column;
+
   ${breakpointMappings.lg} {
+    flex-direction: row;
+    justify-content: space-around;
     width: 90%;
     margin: auto;
   }
@@ -34,7 +38,7 @@ const StyledEvent = styled(Flex)`
   box-shadow: ${props => props.theme.shadows.elevationShadow};
 
   ${breakpointMappings.lg} {
-    flex-direction: row;
+    width: 45%;
   }
 `;
 
@@ -44,10 +48,15 @@ const StyledEventImage = styled.div`
   background-image: url(${props => props.src});
   background-size: 200%;
   background-position: center;
+
+  ${breakpointMappings.lg} {
+    min-height: 200px;
+  }
 `;
 
 const StyledEventLink = styled.a`
   margin-left: 1rem;
+  background-position: right center;
 `;
 
 //
@@ -57,12 +66,10 @@ const LandingEvents = props => {
   const pastEvents = events
     .filter(event => moment(event.date) < moment())
     .reverse();
-  console.log(futureEvents);
-  console.log(pastEvents);
 
   const mapEvents = events =>
     events.map(event => (
-      <StyledEvent>
+      <StyledEvent key={`${event.title}-event-list`}>
         <StyledEventImage src={event.image} />
         <Flex
           flexDirection="column"
@@ -107,9 +114,7 @@ const LandingEvents = props => {
         </p>
       )}
       {_.isEmpty(futureEvents) && (
-        <StyledEventsList flexDirection="column">
-          {mapEvents(pastEvents)}
-        </StyledEventsList>
+        <StyledEventsList>{mapEvents(pastEvents)}</StyledEventsList>
       )}
     </StyledLandingEventsContainer>
   );
