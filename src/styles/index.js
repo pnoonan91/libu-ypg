@@ -39,12 +39,7 @@ export const GlobalStyle = createGlobalStyle`
         letter-spacing: 0.2px;
         margin: 0.5rem 0;
     }
-    h1.white,
-    h2.white,
-    h3.white,
-    h4.white,
-    h5.white,
-    h6.white {
+    .white{
         color: white;
     }
     h1.small-margin,
@@ -72,7 +67,7 @@ export const GlobalStyle = createGlobalStyle`
     p.small {
         font-size: 12px;
     }
-    p.medium {
+    .medium {
         font-size: 14px;
     }
     p.bold {

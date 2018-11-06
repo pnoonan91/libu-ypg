@@ -10,6 +10,7 @@ import LandingEvents from "./components/landing/landing-events/LandingEvents";
 import LandingSuccess from "./components/landing/landing-success/LandingSuccess";
 import LandingVolunteer from "./components/landing/landing-volunteer/LandingVolunteer";
 import LandingInstagram from "./components/landing/landing-instagram/LandingInstagram";
+import Footer from "./components/layout/footer/Footer";
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
         <LandingSuccess />
         <LandingVolunteer />
         <LandingInstagram />
+        <Footer />
       </div>
     );
   }
