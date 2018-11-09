@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import { Flex } from "@rebass/grid";
+import { Link } from "react-router-dom";
 
 //
 // --- Styled Components ---
@@ -47,14 +48,18 @@ const HeaderDesktop = props => {
         justifyContent="space-between"
       >
         <Flex>
-          <Flex alignItems="center">
-            <StyledDesktopLogo src={props.logo} />
-            <h2>{props.logoText}</h2>
+          <Flex>
+            <Link to="/">
+              <Flex alignItems="center">
+                <StyledDesktopLogo src={props.logo} />
+                <h2>{props.logoText}</h2>
+              </Flex>
+            </Link>
           </Flex>
           <StyledDesktopLinkContainer alignItems="center">
             {props.links.map(link => (
               <StyledLink alignItems="center" key={`${link.text}-nav-item`}>
-                <a>{link.text}</a>
+                <Link to={link.path}>{link.text}</Link>
               </StyledLink>
             ))}
           </StyledDesktopLinkContainer>
@@ -62,7 +67,9 @@ const HeaderDesktop = props => {
         <Flex>
           {props.buttons.map(button => (
             <StyledButton key={`${button.text}-button-item`}>
-              <a className={button.class}>{button.text}</a>
+              <Link to={button.path} className={button.class}>
+                {button.text}
+              </Link>
             </StyledButton>
           ))}
         </Flex>

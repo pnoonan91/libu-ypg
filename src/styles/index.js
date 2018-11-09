@@ -58,6 +58,9 @@ export const GlobalStyle = createGlobalStyle`
     h6.no-margin {
         margin: 0;
     }
+    .center {
+        text-align: center;
+    }
     p.small-margin{
         margin: 0.3rem 0;
     }
@@ -73,8 +76,22 @@ export const GlobalStyle = createGlobalStyle`
     p.bold {
         font-weight: bold;
     }
+    p.header {
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+        margin: 0.5rem 0;
+        font-size: 1.25rem;
+    }
+    p.upper-case {
+        text-transform: uppercase;
+    }
+    p.pink {
+        color: ${theme.colors.primaryPink};
+    }
     a {
         text-decoration: none;
+        color: ${theme.colors.primaryGray}
     }
     a.outline {
         border: 1px solid ${theme.colors.primaryPink};

@@ -1,16 +1,13 @@
 import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
 
 import { GlobalStyle } from "./styles";
 import Header from "./components/layout/header/Header";
 import Messages from "./components/messages/Messages";
-import LandingImage from "./components/landing/landing-image/LandingImage";
-import LandingAbout from "./components/landing/landing-about/LandingAbout";
-import LandingMission from "./components/landing/landing-mission/LandingMission";
-import LandingEvents from "./components/landing/landing-events/LandingEvents";
-import LandingSuccess from "./components/landing/landing-success/LandingSuccess";
-import LandingVolunteer from "./components/landing/landing-volunteer/LandingVolunteer";
-import LandingInstagram from "./components/landing/landing-instagram/LandingInstagram";
 import Footer from "./components/layout/footer/Footer";
+import SubFooter from "./components/layout/footer/SubFooter";
+import LandingPage from "./components/pages/LandingPage";
+import About from "./components/pages/About";
 
 class App extends Component {
   render() {
@@ -19,13 +16,13 @@ class App extends Component {
         <GlobalStyle />
         <Header />
         <Messages />
-        <LandingImage />
-        <LandingAbout />
-        <LandingMission />
-        <LandingEvents />
-        <LandingSuccess />
-        <LandingVolunteer />
-        <LandingInstagram />
+
+        <Switch>
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/about" component={About} />
+        </Switch>
+
+        <SubFooter />
         <Footer />
       </div>
     );
