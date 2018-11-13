@@ -4,6 +4,8 @@ import { Flex, Box } from "@rebass/grid";
 
 import BannerImage from "../image/BannerImage";
 
+import { breakpointMappings } from "../../styles/sizes";
+
 const ourGoal =
   "Our goal is simple: We want to help the children living in Illinois Foster Care to find their forever families.";
 
@@ -25,25 +27,39 @@ const StyledAboutCaption = styled.h2`
 `;
 
 const StyledInformationSection = styled(Flex)`
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  flex-direction: ${props =>
+    props.mobileReverse ? "column-reverse" : "column"};
   align-items: center;
-  margin: ${props => (props.bind ? "auto" : "")};
-  max-width: ${props => (props.bind ? props.theme.elementSizes.siteWrap : "")};
   background-color: ${props =>
     props.pinkBackground ? props.theme.colors.lightPink : "white"};
+
+  ${breakpointMappings.lg} {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    flex-direction: ${props => (props.column ? "column" : "row")};
+    margin: ${props => (props.bind ? "auto" : "")};
+    max-width: ${props =>
+      props.bind ? props.theme.elementSizes.siteWrap : ""};
+  }
 `;
 
 const StyledAboutSectionContent = styled.p``;
 
 const StyledByTheNumbersSection = styled(Flex)`
-  margin-left: 2rem;
-  margin-right: 0.5rem;
-  min-width: 50%;
+  box-shadow: ${props => props.theme.shadows.elevationShadow};
   flex-direction: column;
   text-align: center;
-  box-shadow: ${props => props.theme.shadows.elevationShadow};
-  padding: 0.5rem;
+  margin-bottom: 1rem;
+
+  ${breakpointMappings.lg} {
+    margin-left: 2rem;
+    margin-right: 0.5rem;
+    min-width: 50%;
+    padding: 0.5rem;
+  }
 `;
 
 const StyledStatisticContainer = styled(Box)`
@@ -51,11 +67,16 @@ const StyledStatisticContainer = styled(Box)`
 `;
 
 const StyledIconContainer = styled(Flex)`
+  margin-top: 1rem;
   flex-direction: column;
-  min-width: 30%;
   text-align: center;
-  margin-right: ${props => (props.right ? "2rem" : "0")};
-  margin-left: ${props => (props.left ? "2rem" : "0")};
+
+  ${breakpointMappings.lg} {
+    min-width: 30%;
+    margin-right: ${props => (props.right ? "2rem" : "0")};
+    margin-left: ${props => (props.left ? "2rem" : "0")};
+    margin-top: 0;
+  }
 `;
 
 const StyledIcon = styled.img`
@@ -70,8 +91,12 @@ const StyledIconSectionLink = styled.a`
 `;
 
 const StyledBindingContainer = styled(Flex)`
-  max-width: ${props => props.theme.elementSizes.siteWrap};
-  margin: auto;
+  flex-direction: column;
+  ${breakpointMappings.lg} {
+    flex-direction: row;
+    max-width: ${props => props.theme.elementSizes.siteWrap};
+    margin: auto;
+  }
 `;
 
 //
@@ -211,7 +236,7 @@ const About = props => (
           </StyledAboutSectionContent>
         </StyledBindingContainer>
       </StyledInformationSection>
-      <StyledInformationSection bind>
+      <StyledInformationSection bind mobileReverse>
         <Flex flexDirection="column" alignItems="center">
           <StyledAboutSectionContent>
             More recently, our group has partnered with Lydia Home, a group home
@@ -235,6 +260,7 @@ const About = props => (
             to their success.
           </StyledAboutSectionContent>
         </Flex>
+
         <StyledIconContainer left>
           <StyledIcon src="/images/home.png" />
           <p className="header no-margin pink">Group Home Sponsors</p>
@@ -249,7 +275,7 @@ const About = props => (
           </StyledIconSectionLink>
         </StyledIconContainer>
       </StyledInformationSection>
-      <StyledInformationSection bind flexDirection="column">
+      <StyledInformationSection bind column>
         <StyledAboutSectionContent className="center">
           <h3>
             We are always looking for new ways to help children throughout
@@ -258,7 +284,7 @@ const About = props => (
             group can help you with, please don’t hesitate to reach out!
           </h3>
         </StyledAboutSectionContent>
-        <a className="secondary">Join Us</a>
+        <a className="primary">Join Us</a>
       </StyledInformationSection>
     </StyledAboutPageContainer>
   </div>
