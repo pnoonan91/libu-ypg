@@ -8,6 +8,7 @@ import Footer from "./components/layout/footer/Footer";
 import SubFooter from "./components/layout/footer/SubFooter";
 import LandingPage from "./components/pages/LandingPage";
 import About from "./components/pages/About";
+import Events from "./components/pages/Events";
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/about" component={About} />
+          <Route exact path="/events" component={Events} />
         </Switch>
 
         <SubFooter />

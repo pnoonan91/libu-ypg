@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 import { Flex, Box } from "@rebass/grid";
+import { Link } from "react-router-dom";
 
 //
 // --- Styled Components ---
@@ -94,7 +95,7 @@ class HeaderMobile extends React.Component {
 
     const mappedLinks = links.map(link => (
       <StyledNavItem onClick={this.handleClose} key={`${link.text}-nav-item`}>
-        <a>{link.text}</a>
+        <Link to={link.path}>{link.text}</Link>
       </StyledNavItem>
     ));
     return (
@@ -107,10 +108,12 @@ class HeaderMobile extends React.Component {
           <nav>{mappedLinks}</nav>
         </StyledMobileMenu>
         <Flex justifyContent="space-between" alignItems="center">
-          <Flex alignItems="center">
-            <StyledMobileLogo src={this.props.logo} />
-            <h3>{this.props.logoText}</h3>
-          </Flex>
+          <Link to="/">
+            <Flex alignItems="center">
+              <StyledMobileLogo src={this.props.logo} />
+              <h3>{this.props.logoText}</h3>
+            </Flex>
+          </Link>
           <StyledMenuButtonContainer onClick={this.handleOpen}>
             <StyledMenuButton className="fas fa-bars" />
           </StyledMenuButtonContainer>

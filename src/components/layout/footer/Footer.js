@@ -1,8 +1,9 @@
 import * as React from "react";
 import styled from "styled-components";
 import { Flex } from "@rebass/grid";
-import HideBreakPoint from "../../layout/HideBreakPoint";
+import { Link } from "react-router-dom";
 
+import HideBreakPoint from "../../layout/HideBreakPoint";
 import { breakpointMappings } from "../../../styles";
 
 //
@@ -34,8 +35,12 @@ const Footer = props => {
           justifyContent="space-between"
         >
           <Flex alignItems="center">
-            <a className="secondary white medium">Home</a>
-            <a className="secondary white medium">About Us</a>
+            <Link className="secondary white medium" to="/">
+              Home
+            </Link>
+            <Link className="secondary white medium" to="/about">
+              About Us
+            </Link>
             <a className="secondary white medium">Events</a>
             <a className="secondary white medium">Board</a>
             <a className="secondary white medium">News</a>

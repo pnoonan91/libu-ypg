@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { Flex, Box } from "@rebass/grid";
 
 import BannerImage from "../image/BannerImage";
-
 import { breakpointMappings } from "../../styles/sizes";
+import { StyledCaption } from "../layout/Caption";
 
 const ourGoal =
   "Our goal is simple: We want to help the children living in Illinois Foster Care to find their forever families.";
@@ -14,15 +14,6 @@ const aboutUs = "About Us";
 //
 // --- Styled Components ---
 const StyledAboutPageContainer = styled(Flex)`
-  margin: auto;
-`;
-
-const StyledAboutCaption = styled.h2`
-  font-style: italic;
-  text-align: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  max-width: ${props => props.theme.elementSizes.siteWrap};
   margin: auto;
 `;
 
@@ -106,7 +97,7 @@ const About = props => (
   <div>
     <BannerImage image="/images/about-us.jpeg" tagline={aboutUs} />
     <StyledAboutPageContainer flexDirection="column">
-      <StyledAboutCaption>{ourGoal}</StyledAboutCaption>
+      <StyledCaption>{ourGoal}</StyledCaption>
       <StyledInformationSection bind>
         <Flex flexDirection="column" alignItems="center">
           <StyledAboutSectionContent>
