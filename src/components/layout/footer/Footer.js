@@ -41,7 +41,9 @@ const Footer = props => {
             <Link className="secondary white medium" to="/about">
               About Us
             </Link>
-            <a className="secondary white medium">Events</a>
+            <Link to="/events" className="secondary white medium">
+              Events
+            </Link>
             <a className="secondary white medium">Board</a>
             <a className="secondary white medium">News</a>
             <HideBreakPoint xs sm md>

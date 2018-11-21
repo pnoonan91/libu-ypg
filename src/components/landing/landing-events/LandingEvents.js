@@ -105,7 +105,7 @@ const LandingEvents = props => {
     ));
   return (
     <StyledLandingEventsContainer flexDirection="column" px={2}>
-      <h1 style={{ marginTop: "0" }}>Events</h1>
+      {!props.noHeader && <h1 style={{ marginTop: "0" }}>Events</h1>}
       {_.isEmpty(futureEvents) && (
         <p className="no-margin">
           We have no future events scheduled at the moment, but check back often

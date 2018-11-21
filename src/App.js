@@ -9,6 +9,7 @@ import SubFooter from "./components/layout/footer/SubFooter";
 import LandingPage from "./components/pages/LandingPage";
 import About from "./components/pages/About";
 import Events from "./components/pages/Events";
+import Board from "./components/pages/Board";
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/about" component={About} />
           <Route exact path="/events" component={Events} />
+          <Route exact path="/board" component={Board} />
         </Switch>
 
         <SubFooter />

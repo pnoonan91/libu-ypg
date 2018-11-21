@@ -93,6 +93,9 @@ export const GlobalStyle = createGlobalStyle`
         text-decoration: none;
         color: ${theme.colors.primaryGray}
     }
+    a.pink {
+        color: ${theme.colors.primaryPink}
+    }
     a.outline {
         border: 1px solid ${theme.colors.primaryPink};
         padding: .5rem 1rem;
