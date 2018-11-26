@@ -10,13 +10,16 @@ export const boardMembers = [
     name: "Allison Smith",
     position: "Vice President",
     bio: "",
-    image: "/images/board-pics/allison.jpg"
+    image: "/images/board-pics/allison.jpg",
+    center: true
   },
   {
     name: "Brian Miller",
     position: "Treasurer",
     bio:
-      "Brian was introduced to foster care when his family welcomed children for short- and medium-term care during his high school years. Brian’s admiration for the courage of the children and the open arms of his parents drives him to remain involved through LIBUYPG. Brian is an investment professional in Chicago with a degree from the University of Notre Dame."
+      "Brian was introduced to foster care when his family welcomed children for short- and medium-term care during his high school years. Brian’s admiration for the courage of the children and the open arms of his parents drives him to remain involved through LIBUYPG. Brian is an investment professional in Chicago with a degree from the University of Notre Dame.",
+      image: '/images/board-pics/brian.jpg',
+      center: true
   },
   {
     name: "Jamie McGuire",

@@ -15,6 +15,7 @@ const StyledDropdownContainer = styled.div`
 
 const StyledBoardImage = styled.div`
 background-image: url(${props => props.imgSrc});
+background-position: ${props => props.center && 'center'}
 height: 150px;
 width: 150px;
 margin-left: auto;
@@ -26,6 +27,7 @@ border-radius: 100px;
 
     ${breakpointMappings.lg} {
         min-width: 150px;
+        height: 150px;
         margin-right: 2rem;
         margin-left: 0;
         margin-bottom: 0;
@@ -52,7 +54,7 @@ const Dropdown = props => {
   return boardMembers.map(member => (
     <StyledDropdownContainer>
       <StyledMobileFlex>
-        <StyledBoardImage imgSrc={member.image} />
+        <StyledBoardImage imgSrc={member.image} center={member.center}/>
         <Flex flexDirection="column">
             <StyledMobilePositions>
 
